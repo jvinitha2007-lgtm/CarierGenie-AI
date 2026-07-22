@@ -7,10 +7,10 @@ from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import or_, select
 from sqlalchemy.orm import Session
-from .db import Base, SessionLocal, engine, get_db
-from .models import Application, Opportunity, User
-from .schemas import ApplicationUpdate, AuthRequest, ProfileResponse, ProfileUpdate
-from .security import create_token, current_user, hash_password, verify_password
+from db import Base, SessionLocal, engine, get_db
+from models import Application, Opportunity, User
+from schemas import ApplicationUpdate, AuthRequest, ProfileResponse, ProfileUpdate
+from security import create_token, current_user, hash_password, verify_password
 
 logging.basicConfig(level=os.getenv('LOG_LEVEL', 'INFO'))
 logger = logging.getLogger('careergenie')
